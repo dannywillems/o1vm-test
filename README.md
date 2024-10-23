@@ -11,3 +11,5 @@ to provide a macro to create o1vm compatible programs
 ### Disassembler for RISC-V
 
 Check: https://github.com/riscv-collab/riscv-gnu-toolchain
+
+Alternatively, use [radare2](https://www.radare.org/n/radare2.html)
