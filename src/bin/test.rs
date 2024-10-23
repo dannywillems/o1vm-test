@@ -6,7 +6,6 @@ use core::panic::PanicInfo;
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
     // Note that this should include some o1vm infos
-    // logs "panicked at '$reason', src/main.rs:27:4" to the host stderr
     loop {}
 }
 
