@@ -1,5 +1,10 @@
 # Test of a no-std program written in Rust for o1vm
 
+Add the riscv32i target:
+```
+rustup target add riscv32i-unknown-none-elf
+```
+
 Compile into RISC-V 32i
 ```
 cargo build --release --target riscv32i-unknown-none-elf
