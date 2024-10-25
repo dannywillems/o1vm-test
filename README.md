@@ -1,4 +1,4 @@
-# Test of a no-std program written in Rust for o1vm
+# Test of a no-std program written in Rust for o1vm (riscv32i edition)
 
 Add the riscv32i target:
 ```
