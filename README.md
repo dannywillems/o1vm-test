@@ -54,7 +54,8 @@ See more about optimisations [here](https://github.com/johnthagen/min-sized-rust
 - `$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -d`:
 shows the executable sections
 - `$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -D`:
-shows all the sections
+shows all the sections. These sections will be required to be loaded in the o1vm
+memory.
 - `$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -f`:
 shows header information about the ELF. It does also suppose containing the
 entry point of the program, often called `_start`. The entry point can also be
