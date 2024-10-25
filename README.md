@@ -15,6 +15,12 @@ It is left to the user to implement them.
 It is exactly what we need with zkVM: we want to reimplement syscalls to talk
 with the external world.
 
+To run proof-systems in o1vm, we will need to make one version of proof-systems
+without std. It would be the endgoal of this project.
+By using a no-std version of proof-systems, and a no-std light client like
+[helios](https://github.com/a16z/helios), we can have a bridge from Ethereum to
+Mina.
+
 ## Disassembler for RISC-V
 
 ### RISC-V GNU toolchain
