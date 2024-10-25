@@ -36,6 +36,7 @@ Source: https://github.com/riscv-collab/riscv-gnu-toolchain
 Compile for 32bits RISCV using:
 ```shell
 ./configure --with-arch=rv32gc --with-abi=ilp32d --prefix=$HOME/.bin/riscv-gnu-toolchain
+make -j 32
 ```
 
 You will find the binaries in `$HOME/.bin/riscv-gnu-toolchain`.
