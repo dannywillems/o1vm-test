@@ -34,3 +34,7 @@ Compile for 32bits RISCV using:
 You will find the binaries in `$HOME/.bin/riscv-gnu-toolchain`.
 
 Alternatively, use [radare2](https://www.radare.org/n/radare2.html)
+
+## Rust profiles
+
+See https://doc.rust-lang.org/cargo/reference/profiles.html for compiler optimisation.

@@ -6,3 +6,7 @@ license = "MIT/Apache-2.0"
 
 [[bin]]
 name = "test"
+
+[profile.release]
+lto = true
+
