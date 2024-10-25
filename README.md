@@ -8,6 +8,13 @@ cargo build --release --target riscv32i-unknown-none-elf
 This project would eventually become part of o1-labs organizationa as a library
 to provide a macro to create o1vm compatible programs
 
+no-std programs are Rust programs that do not use the standard librar `std`. It
+means programs do not suppose there is a network layer, nor allocators.
+In this setting, no syscalls can be performed.
+It is left to the user to implement them.
+It is exactly what we need with zkVM: we want to reimplement syscalls to talk
+with the external world.
+
 ## Disassembler for RISC-V
 
 ### RISC-V GNU toolchain
