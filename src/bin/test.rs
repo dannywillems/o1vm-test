@@ -5,6 +5,7 @@
 use core::panic::PanicInfo;
 
 const FIBONACCI_N: u32 = 10;
+const MAX_ITERATIONS: u32 = 10000;
 
 // Only for debugging
 #[no_mangle]
@@ -34,12 +35,15 @@ pub fn fibonacci_iterative(n: u32) -> u32 {
 
 // Entry point of our program
 #[no_mangle]
-pub extern "C" fn _start() -> ! {
+pub extern "C" fn _start() -> () {
     let mut x = FIBONACCI_N;
     loop {
         x += 1;
         let _ = fibonacci(x);
         let _ = fibonacci_iterative(x);
+        if x == MAX_ITERATIONS {
+            break;
+        }
     }
 }
 
