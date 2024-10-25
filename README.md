@@ -32,16 +32,29 @@ Mina.
 
 ### RISC-V GNU toolchain
 
-Source: https://github.com/riscv-collab/riscv-gnu-toolchain
+Source:
+```
+git clone https://github.com/riscv-collab/riscv-gnu-toolchain
+```
+
 Compile for 32bits RISCV using:
 ```shell
 ./configure --with-arch=rv32gc --with-abi=ilp32d --prefix=$HOME/.bin/riscv-gnu-toolchain
-make -j 32
+make -j 32 # require a good internet connection and some minutes
 ```
 
 You will find the binaries in `$HOME/.bin/riscv-gnu-toolchain`.
 
 Alternatively, use [radare2](https://www.radare.org/n/radare2.html)
+
+## Analyze generated code
+
+To see the (executable) assembly code, use:
+```
+$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump target/riscv32i-unknown-none-elf/release/test -d
+```
+It is the code to be loaded in the memory of the o1vm.
+The entry point is normally the section starting with `_start`.
 
 ## Rust profiles
 
@@ -61,4 +74,3 @@ memory.
 shows header information about the ELF. It does also suppose containing the
 entry point of the program, often called `_start`. The entry point can also be
 changed.
-
