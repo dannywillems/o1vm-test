@@ -38,3 +38,5 @@ Alternatively, use [radare2](https://www.radare.org/n/radare2.html)
 ## Rust profiles
 
 See https://doc.rust-lang.org/cargo/reference/profiles.html for compiler optimisation.
+
+See more about optimisations [here](https://github.com/johnthagen/min-sized-rust)
