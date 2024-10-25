@@ -50,12 +50,12 @@ See more about optimisations [here](https://github.com/johnthagen/min-sized-rust
 
 ## Some reminders
 
-`readelf -s [binary]`: list all symbols of the binary
-`$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -d`:
+- `readelf -s [binary]`: list all symbols of the binary
+- `$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -d`:
 shows the executable sections
-`$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -D`:
+- `$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -D`:
 shows all the sections
-`$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -f`:
+- `$HOME/.bin/riscv-gnu-toolchain/bin/riscv32-unknown-elf-objdump [file] -f`:
 shows header information about the ELF. It does also suppose containing the
 entry point of the program, often called `_start`. The entry point can also be
 changed.
