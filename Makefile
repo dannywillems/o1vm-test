@@ -2,7 +2,7 @@ CURR_DIR = $(shell pwd)
 DEPS_DIR = $(CURR_DIR)/_o1vm_deps
 BASE_DIR_RISCV_TOOLS = $(DEPS_DIR)/riscv-gnu-toolchain
 BASE_DIR_RISCV_TOOLS_BUILD = $(DEPS_DIR)/riscv-gnu-toolchain/build
-OBJDUMP_BINARY = $(BASE_DIR_RISCV_TOOLS_BUILD)/riscv32-unknown-elf-objdump
+OBJDUMP_BINARY = $(BASE_DIR_RISCV_TOOLS_BUILD)/bin/riscv32-unknown-elf-objdump
 
 TARGET = "riscv32i-unknown-none-elf"
 
