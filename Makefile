@@ -43,3 +43,5 @@ lint:
 
 print-executable-code:
 	$(OBJDUMP_BINARY) -d target/$(TARGET)/release/test -d
+
+.PHONY: setup-toolchain setup-tool setup build run clean test-doc fmt lint print-executable-code
