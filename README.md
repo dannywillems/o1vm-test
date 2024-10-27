@@ -1,5 +1,15 @@
 # Test of a no-std program written in Rust for o1vm (riscv32i edition)
 
+TL;DR
+
+```
+make setup
+make build
+make print-executable-code
+```
+
+------------
+
 Add the riscv32i target:
 ```
 rustup target add riscv32i-unknown-none-elf
@@ -24,9 +34,10 @@ with the external world.
 
 To run proof-systems in o1vm, we will need to make one version of proof-systems
 without std. It would be the endgoal of this project.
-By using a no-std version of proof-systems, and a no-std light client like
-[helios](https://github.com/a16z/helios), we can have a bridge from Ethereum to
-Mina.
+By using a no-std version of the verifier in proof-systems, and a no-std light
+client like [helios](https://github.com/a16z/helios), we can have a bridge from
+Ethereum to Mina.
+We will need to modify the Mina protocol to accept o1vm proofs.
 
 ## Disassembler for RISC-V
 
