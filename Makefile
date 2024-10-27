@@ -42,6 +42,8 @@ lint:
 	cargo clippy --all-features --all-targets -- -W clippy::all -D warnings
 
 print-executable-code:
-	$(OBJDUMP_BINARY) -d target/$(TARGET)/release/test -d
+	if [ -z $(O1VM_EXECUTABLE_NAME) ]; then echo "Please set the variable O1VM_EXECUTABLE_NAME to the program to analyze"; exit 1; fi
+	if [ ! -f target/$(TARGET)/release/$(O1VM_EXECUTABLE_NAME) ]; then echo "Executable not found"; exit 1; fi
+	$(OBJDUMP_BINARY) -d target/$(TARGET)/release/$(O1VM_EXECUTABLE_NAME) -d
 
 .PHONY: setup-toolchain setup-tool setup build run clean test-doc fmt lint print-executable-code

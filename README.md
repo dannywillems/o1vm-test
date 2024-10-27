@@ -4,8 +4,8 @@ TL;DR
 
 ```
 make setup
-make build
-make print-executable-code
+make build # will build fibonacci example
+O1VM_EXECUTABLE_NAME=fibonacci make print-executable-code
 ```
 
 ------------
