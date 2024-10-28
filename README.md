@@ -95,3 +95,17 @@ memory.
 shows header information about the ELF. It does also suppose containing the
 entry point of the program, often called `_start`. The entry point can also be
 changed.
+
+## TODO
+
+- Try arkworks-ff without std. Maybe trying to modify it. It does require an allocator.
+When trying to use it we get:
+
+```rust
+error: no global memory allocator found but one is required; link to std or add `#[global_allocator]` to a static item that implements the GlobalAlloc trait
+
+warning: unused import: `ark_ff::PrimeField`
+ --> src/bin/merkle_tree.rs:4:5
+  |
+4 | use ark_ff::PrimeField;
+```
