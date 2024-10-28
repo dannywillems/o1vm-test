@@ -8,6 +8,16 @@ make build # will build fibonacci example
 O1VM_EXECUTABLE_NAME=fibonacci make print-executable-code
 ```
 
+You also have a standard library that can be used to replace components that are
+not available in no-std environment (like elliptic curves, fields, digital
+signature schemes, hash functions, etc)
+
+```rust
+use o1vm_stdlib;
+
+// TODO [...]
+```
+
 ------------
 
 Add the riscv32i target:
