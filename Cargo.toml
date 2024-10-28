@@ -1,11 +1,14 @@
 [package]
 edition = "2021"
-name = "o1vm-test"
+name = "o1vm-stdlib"
 version = "0.1.0"
 license = "MIT/Apache-2.0"
 
 [[bin]]
 name = "fibonacci"
+
+[[bin]]
+name = "merkle_tree"
 
 [profile.release]
 lto = true
