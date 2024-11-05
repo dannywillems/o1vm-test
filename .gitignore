@@ -1,3 +1,5 @@
 Cargo.lock
 target
 _o1vm_deps
+.ccls-cache
+opensbi-riscv32-generic-fw_dynamic.bin

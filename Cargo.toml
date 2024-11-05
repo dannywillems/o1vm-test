@@ -12,4 +12,4 @@ name = "merkle_tree"
 
 [profile.release]
 lto = true
-
+panic="abort"

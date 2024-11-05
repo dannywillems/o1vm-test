@@ -1,9 +1,10 @@
 #![no_std]
 #![no_main]
 
+use core::arch::asm;
 use core::panic::PanicInfo;
 
-const MAX_ITERATIONS: u32 = 16384;
+const MAX_ITERATIONS: u32 = 30;
 
 // Only for debugging
 #[no_mangle]
@@ -19,14 +20,18 @@ pub fn fibonacci(n: u32) -> u32 {
 
 // Entry point of our program
 #[no_mangle]
-pub extern "C" fn _start() -> () {
+pub fn _start() {
     let mut x = 1;
-    loop {
-        x += 1;
+    while x <= MAX_ITERATIONS {
         let _res1 = fibonacci(x);
-        if x == MAX_ITERATIONS {
-            break;
-        }
+        x += 1;
+    }
+    // Our convention is that syscall 42 is to exit the program
+    // In this case, a0 keeps the exit status
+    // We use registers a0 to a5 as parameters for the syscall
+    // we generalize it later for other kind of syscalls
+    unsafe {
+        asm!("li a0, 1", "li a7, 42", "ecall");
     }
 }
 
