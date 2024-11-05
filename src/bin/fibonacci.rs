@@ -30,5 +30,7 @@ pub fn _start() {
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
-    loop {}
+    loop {
+        o1vm_test::syscall::exit_panic();
+    }
 }
