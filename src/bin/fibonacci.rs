@@ -1,7 +1,6 @@
 #![no_std]
 #![no_main]
 
-use core::arch::asm;
 use core::panic::PanicInfo;
 
 const MAX_ITERATIONS: u32 = 30;
@@ -26,13 +25,7 @@ pub fn _start() {
         let _res1 = fibonacci(x);
         x += 1;
     }
-    // Our convention is that syscall 42 is to exit the program
-    // In this case, a0 keeps the exit status
-    // We use registers a0 to a5 as parameters for the syscall
-    // we generalize it later for other kind of syscalls
-    unsafe {
-        asm!("li a0, 1", "li a7, 42", "ecall");
-    }
+    o1vm_stdlib::syscall::exit_success();
 }
 
 #[panic_handler]
