@@ -115,3 +115,9 @@ tutorial](https://www.brochweb.com/blog/post/how-to-create-a-custom-memory-alloc
 to write a custom allocator.
 
 Q: should we get a custom allocator that any zkVM in the industry can use?
+
+## Syscalls
+
+See [`./src/syscall.rs`](./src/syscall.rs) to see a list of implemented syscalls.
+
+Q: should we standardize the syscalls implemented for the zkVM in the industry?
