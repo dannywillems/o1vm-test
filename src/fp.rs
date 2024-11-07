@@ -1,3 +1,5 @@
+use crate::bigint::BigInt32;
+
 /// Generic trait to represent a field
 pub trait Field:
     Copy
@@ -16,27 +18,29 @@ pub trait Field:
 
     /// The modulus of the field.
     const SIZE: usize;
+}
 
+/// Represents a field element
+pub trait Field32: Field {
     fn new(value: u32) -> Self;
 }
 
-#[derive(Copy, Clone)]
-pub struct BabyBear {
-    pub value: u32,
-}
+pub type BabyBear = BigInt32;
 
 impl Field for BabyBear {
-    const ZERO: BabyBear = BabyBear { value: 0 };
+    const ZERO: BabyBear = BigInt32 { data: [0] };
 
-    const ONE: BabyBear = BabyBear { value: 1 };
+    const ONE: BabyBear = BigInt32 { data: [1] };
 
     const WORDS: usize = 1;
 
     const SIZE: usize = 15 * (1 << 27) + 1;
+}
 
+impl Field32 for BabyBear {
     fn new(value: u32) -> Self {
-        BabyBear {
-            value: value % Self::SIZE as u32,
+        Self {
+            data: [value % Self::SIZE as u32],
         }
     }
 }
@@ -45,8 +49,8 @@ impl core::ops::Add for BabyBear {
     type Output = Self;
 
     fn add(self, other: Self) -> Self {
-        BabyBear {
-            value: (self.value + other.value) % Self::SIZE as u32,
+        Self {
+            data: [(self.data[0] + other.data[0]) % Self::SIZE as u32],
         }
     }
 }
@@ -55,8 +59,8 @@ impl core::ops::Mul for BabyBear {
     type Output = Self;
 
     fn mul(self, other: Self) -> Self {
-        BabyBear {
-            value: (self.value * other.value) % Self::SIZE as u32,
+        Self {
+            data: [(self.data[0] * other.data[0]) % Self::SIZE as u32],
         }
     }
 }
@@ -65,8 +69,8 @@ impl core::ops::Neg for BabyBear {
     type Output = Self;
 
     fn neg(self) -> Self {
-        BabyBear {
-            value: (Self::SIZE as u32 - self.value) % Self::SIZE as u32,
+        Self {
+            data: [Self::SIZE as u32 - self.data[0]],
         }
     }
 }
