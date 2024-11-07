@@ -6,7 +6,7 @@ use core::arch::asm;
 /// - The syscall number for exit is 42.
 /// - The ecall instruction is used to trigger the syscall.
 /// - The other registers used for the function calls (a1-a6) are set to zeros
-/// for completeness.
+///   for completeness.
 pub fn exit_success() {
     unsafe {
         asm!(
