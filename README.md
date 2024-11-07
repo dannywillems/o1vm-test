@@ -113,3 +113,5 @@ warning: unused import: `ark_ff::PrimeField`
 See [this
 tutorial](https://www.brochweb.com/blog/post/how-to-create-a-custom-memory-allocator-in-rust/)
 to write a custom allocator.
+
+Q: should we get a custom allocator that any zkVM in the industry can use?
