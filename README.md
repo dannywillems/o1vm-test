@@ -109,3 +109,7 @@ warning: unused import: `ark_ff::PrimeField`
   |
 4 | use ark_ff::PrimeField;
 ```
+
+See [this
+tutorial](https://www.brochweb.com/blog/post/how-to-create-a-custom-memory-allocator-in-rust/)
+to write a custom allocator.

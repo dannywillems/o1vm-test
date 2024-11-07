@@ -4,14 +4,17 @@ name = "o1vm-stdlib"
 version = "0.1.0"
 license = "MIT/Apache-2.0"
 
+[dependencies]
+ark-ff = { version = "0.4.2" }
+
 [[bin]]
 name = "fibonacci"
 
 [[bin]]
-name = "no_action"
+name = "field_addition"
 
 [[bin]]
-name = "merkle_tree"
+name = "no_action"
 
 [profile.release]
 lto = true
