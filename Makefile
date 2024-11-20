@@ -7,7 +7,7 @@ CC_RISCV32I = $(BASE_DIR_RISCV_TOOLS_BUILD)/bin/riscv32-unknown-elf-gcc
 CC_NATIVE = $(shell which gcc)
 C_SOURCE_DIRECTORY_FILES = c
 
-TARGET = "riscv32i-unknown-none-elf"
+TARGET = "riscv32im-unknown-none-elf"
 
 setup-toolchain:
 	rustup target add $(TARGET)
