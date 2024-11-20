@@ -8,6 +8,9 @@ license = "MIT/Apache-2.0"
 name = "fibonacci"
 
 [[bin]]
+name = "is_prime_naive"
+
+[[bin]]
 name = "no_action"
 
 [[bin]]
